@@ -10,7 +10,7 @@ RUN apk add --update --no-cache \
        python\
        py-pip \
        docker \
-    && curl -sL https://get.docker.com/builds/Linux/x86_64/docker-1.11.2 > /usr/bin/docker \
+    && curl -sL https://get.docker.com/builds/Linux/x86_64/docker-1.12.5 > /usr/bin/docker \
     && chmod +x /usr/bin/docker \
     && pip install --upgrade pip \
     && pip install awscli
@@ -22,6 +22,7 @@ RUN chmod -R +x /scripts
 ENV STORAGE_PROVIDER='' \
     BACKUP_NAME='' \
     DATA_PATH='/data/' \
+    DATA_PATH_EXCLUDE='' \
     GZIP_COMPRESSION='true' \
     CLEAN_DATA_BEFORE_RESTORE='false' \
     BACKUP_VERSION='' \
